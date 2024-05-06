@@ -1,0 +1,35 @@
+@font-face {
+    font-family: inter;
+    src: url(./fonts/Inter-Bold.ttf);
+}
+
+.inter{
+    font-family: inter;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.responsive-icon {
+    font-size: 1.8rem; 
+  }
+  
+  @media (max-width: 600px) {
+    .responsive-icon {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 1025px) {
+    .responsive-icon{
+        font-size: 1.3rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .responsive-icon {
+      font-size: 2.4rem;
+    }
+  }
+  

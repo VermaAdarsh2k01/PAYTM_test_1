@@ -10,7 +10,7 @@ export const Users = () => {
     const [filter , setFilter] = useState("");
 
     useEffect( ()=> {
-        axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter)
+        axios.get("http://192.168.29.189:3000/api/v1/user/bulk?filter=" + filter)
             .then( response => {
                 setUsers(response.data.user)
             }) 
@@ -18,15 +18,16 @@ export const Users = () => {
 
     return (
         <div>
-            <div className="font-bold mt-6 text-lg">
-                Users
+            <div className="font-bold mt-10 text-lg max-[1025px]:mt-5">
+                Contacts
             </div>
-            <div className="my-2">
+            <div className="my-2 ">
                 <input onChange={(e) => {
                     setFilter(e.target.value)
-                }} type="text" placeholder="Search users..." className="w-full px-2 py-1 border rounded border-slate-200"></input>
+                }} type="text" placeholder="Search users..." className="w-full px-2 py-1 border-2 rounded border-slate-200"></input>
             </div>
-            <div>
+
+            <div className='h-[40vh] p-2 overflow-y-auto border-4 rounded-2xl scrollbar-webkit max-[1025px]:h-[40vh]'>
                 {users.map(user => <User user={user} />)}
             </div>
         </div>
@@ -37,11 +38,11 @@ function User({user}){
     
     const navigate = useNavigate();
 
-    return <div className="flex justify-between">
+    return <div className="flex justify-between" >
         <div className="flex">
-            <div className="rounded-full h-12 w-12 bg-slate-200 flex justify-center mt-1 mr-2">
+            <div className="rounded-full h-12 w-12 bg-slate-200  text-slate-600 flex justify-center mt-1 mr-2">
                 <div className="flex flex-col justify-center h-full text-xl">
-                    {user.firstName[0]}
+                    {user.firstName[0].toUpperCase()}
                 </div>
             </div>
             <div className="flex flex-col justify-center h-ful">
@@ -50,11 +51,12 @@ function User({user}){
                 </div>
             </div>
         </div>
-
-        <div className="flex flex-col justify-center h-ful">
+        <div className="flex flex-col justify-center h-full">
             <Button onClick={(e) => {
                 navigate("/send?id=" + user._id + "&name=" + user.firstName);
-            }} label={"Send Money"} />
+            }} label={"Send Money"} 
+            
+            />
         </div>
     </div>
 }

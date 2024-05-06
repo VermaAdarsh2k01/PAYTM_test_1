@@ -52,7 +52,8 @@ router.post("/signup", async (req, res) => {
 
     res.json({
         message: "User created successfully",
-        token: token
+        token: token,
+        userId: userId
     })
 })
 
@@ -81,7 +82,8 @@ router.post("/signin", async (req, res) => {
         }, JWT_SECRET);
   
         res.json({
-            token: token
+            token: token,
+            userId: user._id
         })
         return;
     }
@@ -117,6 +119,7 @@ router.put("/", authMiddleware, async (req, res) => {
 
 router.get("/bulk", async (req, res) => {
     const filter = req.query.filter || "";
+    const userId = req.query.userId
 
     const users = await User.find({
         $or: [{
@@ -127,7 +130,8 @@ router.get("/bulk", async (req, res) => {
             lastName: {
                 "$regex": filter
             }
-        }]
+        }],
+        
     })
 
     res.json({
