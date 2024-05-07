@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import axios from 'axios';
 import Success from '../components/Success'
+import { Appbar } from '../components/Appbar';
 
 
 
@@ -49,30 +50,53 @@ const UpdateBalance = () => {
     };
 
     return (
-        <div className='realative'>
-        <div className="flex justify-center h-screen bg-slate-300 ">
-            <div className="h-full flex flex-col justify-center">
-                <div className="border h-min text-card-foreground max-w-md p-4 space-y-8 w-96 max-[1025px]:w-[30vw] max-[600px]:w-[80vw] bg-white shadow-lg rounded-lg ">
-                    <div className="flex flex-col space-y-1.5 p-6">
-                        <h2 className="text-3xl  text-center inter font-black">Add money</h2>
-                    </div>
-                    <div className="p-6">
-                        <div className="flex items-center justify-center gap-10">
-                        <div className="">
-                            <form onSubmit={handleSubmit} className='flex flex-col gap-7'>
-                                <label className='text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-col gap-3'>
-                                    Balance Change:
-                                    <input type="number" value={balanceChange} onChange={changeHandle} className='required flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm'/>
-                                </label>
-                                <button type="submit " className='justify-center rounded-md text-sm font-medium ring-offset-background transition-colors h-10 px-4 py-2 w-full bg-green-500'>Update Balance</button>
-                            </form>
+        // <div className='realative'>
+        // <div className="flex justify-center h-screen bg-slate-300 ">
+        //     <div className="h-full flex flex-col justify-center">
+        //         <div className="border h-min text-card-foreground max-w-md p-4 space-y-8 w-96 max-[1025px]:w-[30vw] max-[600px]:w-[80vw] bg-white shadow-lg rounded-lg ">
+        //             <div className="flex flex-col space-y-1.5 p-6">
+        //                 <h2 className="text-3xl  text-center inter font-black">Add money</h2>
+        //             </div>
+        //             <div className="p-6">
+        //                 <div className="flex items-center justify-center gap-10">
+        //                 <div className="">
+        //                     <form onSubmit={handleSubmit} className='flex flex-col gap-7'>
+        //                         <label className='text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-col gap-3'>
+        //                             Balance Change:
+        //                             <input type="number" value={balanceChange} onChange={changeHandle} className='required flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm'/>
+        //                         </label>
+        //                         <button type="submit " className='justify-center rounded-md text-sm font-medium ring-offset-background transition-colors h-10 px-4 py-2 w-full bg-green-500'>Update Balance</button>
+        //                     </form>
+        //                 </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
+        // {isTransferSuccessful && <Success/>}
+        // </div>
+        <div className="flex items-center justify-center bg-[#F6F0E3] w-screen h-screen relative">
+            <div className="bg-white h-screen w-[27vw] rounded-[7%] border-4 border-black max-[1025px]:w-[35vw] max-[500px]:w-[100vw]  max-[500px]:border-0 overflow-hidden flex items-center justify-center">
+                <div className=" h-min text-card-foreground max-w-md p-4 space-y-8 w-96 max-[1025px]:w-[30vw] max-[600px]:w-[80vw] bg-white  rounded-lg ">
+                        <div className="flex flex-col space-y-1.5 p-6">
+                            <h2 className="text-3xl  text-center inter font-black">Add money</h2>
                         </div>
+                        <div className="p-6">
+                            <div className="flex items-center justify-center gap-10">
+                            <div className="">
+                                <form onSubmit={handleSubmit} className='flex flex-col gap-7'>
+                                    <label className='text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-col gap-3'>
+                                        Balance Change:
+                                        <input type="number" value={balanceChange} onChange={changeHandle} className='required flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm'/>
+                                    </label>
+                                    <button type="submit " className='justify-center rounded-md text-sm font-medium ring-offset-background transition-colors h-10 px-4 py-2 w-full bg-green-500'>Update Balance</button>
+                                </form>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </div>
-        {isTransferSuccessful && <Success/>}
+            {isTransferSuccessful && <Success/>}
         </div>
     );
 };

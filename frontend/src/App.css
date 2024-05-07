@@ -12,7 +12,7 @@ body{
 }
 
 .responsive-icon {
-    font-size: 1.8rem; 
+    font-size: 3rem; 
   }
   
   @media (max-width: 600px) {

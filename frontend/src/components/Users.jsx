@@ -37,17 +37,19 @@ export const Users = () => {
 function User({user}){
     
     const navigate = useNavigate();
+    let firstName = user.firstName;
+    let capitalizedFirstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
 
     return <div className="flex justify-between" >
         <div className="flex">
             <div className="rounded-full h-12 w-12 bg-slate-200  text-slate-600 flex justify-center mt-1 mr-2">
-                <div className="flex flex-col justify-center h-full text-xl">
-                    {user.firstName[0].toUpperCase()}
+                <div className="flex flex-col items-center justify-center h-full text-xl font-semilbold">
+                    {user.firstName[0]}
                 </div>
             </div>
             <div className="flex flex-col justify-center h-ful">
-                <div>
-                    {user.firstName} {user.lastName}
+                <div className='font-bold'>
+                    {capitalizedFirstName} {user.lastName}
                 </div>
             </div>
         </div>

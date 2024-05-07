@@ -41,22 +41,35 @@ export const SignUp = () => {
                     <div className="pt-4">
                     <Button 
                         onClick={async () => {
-                            const response = await axios.post("http://192.168.29.189:3000/api/v1/user/signup",{
+                            try{
+                                const response = await axios.post("http://192.168.29.189:3000/api/v1/user/signup",{
                                 username,
                                 firstName,
                                 lastName,
                                 password
                             })
                             localStorage.setItem("token" , response.data.token)
-                            localStorage.setItem("userId" , response.data.userId )
-                            console.log(response.data.userId)
+                            localStorage.setItem("userId" , response.data.userId)
+                            console.log(response.data.message)
                             setMessage(response.data.message)
+                            
                             navigate("/dashboard")
-                        }}
+                         }
+                        catch(error){
+                            if(error.response) {
+                                setMessage(error.response.data.message)
+                            } else if (error.request) {
+                                // The request was made but no response was received
+                                setMessage('No response from server');
+                            } else {
+                                // Something happened in setting up the request that triggered an Error
+                                setMessage('Error', error.message);
+                            }
+                        }}}
                         label={"Sign up"} />
                     </div>
                     <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
-                    <p>{message}</p>
+                    <p className='text-red-500'>{message}</p>
                 </div>
             </div>
         </div>

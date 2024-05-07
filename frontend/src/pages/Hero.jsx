@@ -37,7 +37,7 @@ function Hero() {
         <div className=' w-screen h-screen flex max-[600px]:flex-col'>
             <div className='w-[70%] h-screen flex items-center justify-center max-[600px]:w-[100vw] max-[600px]:h-[60vh] max-[600px]:flex-col max-[600px]:gap-5' >
                 <div className='w-[50%]  flex items-center justify-end pr-5'>
-                    <img ref={gsapRef} className="w-[50%] rotate-6 shadow-2xl max-[1025px]:w-[70%] max-[600px]:shadow-none max-[600px]:w-[100vw]" src={Card}></img>
+                    <img ref={gsapRef} className="w-[50%] rotate-6  max-[1025px]:w-[70%] max-[600px]:shadow-none max-[600px]:w-[100vw]" src={Card}></img>
                 </div> 
                 <div className='w-[50%] font-black text-8xl inter flex items-start ps-5 gap-6 max-[1025px]:text-7xl max-[1025px]:ps-0 max-[600px]:text-[2.8rem] max-[600px]:font-black max-[600px]:gap-4 ' ref={textRef}>
                     <p className=' tracking-tighter'>SEND</p> 

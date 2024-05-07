@@ -1,8 +1,8 @@
-import React from 'react'
-import card from '../assets/card2.png'
+import React, { useEffect, useState } from 'react'
+
+import { FaUser } from "react-icons/fa";
 
 export const Appbar = () => {
-
 
   return (
     <>
@@ -17,7 +17,7 @@ export const Appbar = () => {
                 </div>
                 <div className="rounded-full h-12 w-12 bg-[#586CFD] flex justify-center mt-1 mr-2">
                     <div className="flex justify-center text-white items-center h-full text-xl">
-                        U
+                        <FaUser/>
                     </div>
                 </div>
             </div>

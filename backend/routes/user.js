@@ -10,8 +10,8 @@ const  { authMiddleware } = require("../middleware");
 
 const signupBody = zod.object({
     username: zod.string().email(),
-	firstName: zod.string(),
-	lastName: zod.string(),
+	firstName: zod.string().transform(name => name.charAt(0).toUpperCase() + name.slice(1)),
+	lastName: zod.string().transform(name => name.charAt(0).toUpperCase() + name.slice(1)),
 	password: zod.string()
 })
 
@@ -19,7 +19,7 @@ router.post("/signup", async (req, res) => {
     const { success } = signupBody.safeParse(req.body)
     if (!success) {
         return res.status(411).json({
-            message: "Email already taken / Incorrect inputs"
+            message: "Incorrect inputs !"
         })
     }
 
@@ -29,15 +29,15 @@ router.post("/signup", async (req, res) => {
 
     if (existingUser) {
         return res.status(411).json({
-            message: "Email already taken/Incorrect inputs"
+            message: "Email already taken"
         })
     }
 
     const user = await User.create({
         username: req.body.username,
         password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstName: req.body.firstName.toLowerCase(),
+        lastName: req.body.lastName.toLowerCase(),
     })
     const userId = user._id;
 
@@ -53,7 +53,8 @@ router.post("/signup", async (req, res) => {
     res.json({
         message: "User created successfully",
         token: token,
-        userId: userId
+        userId: userId,
+        user: user
     })
 })
 
