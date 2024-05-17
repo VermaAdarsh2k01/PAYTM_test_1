@@ -1,12 +1,9 @@
 import React from 'react'
 import { FaRupeeSign } from "react-icons/fa";
-import { IoMdAddCircle } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
 import '../App.css'
 
 export const Balance = ({value}) => {
 
-    const navigate = useNavigate()
   return (
     <div className="flex items-center justify-center w-full ">
         <div className=' px-4 py-4 flex flex-col rounded-2xl items-center justify-center bg-[#36CC7C] gap-5 max-[1025px]:px-3 max-[1025px]:py-4 '>

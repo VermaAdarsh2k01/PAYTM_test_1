@@ -1,8 +1,4 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter , Route , Routes } from "react-router-dom";
 import {SignUp} from "./pages/SignUp";
 import {SignIn} from "./pages/SignIn";
 import  {Dashboard}  from "./pages/Dashboard";
@@ -22,6 +18,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/send" element={<SendMoney />} />
           <Route path="/update" element={<UpdateBalance/>}/>
+
         </Routes>
       </BrowserRouter>
     </>

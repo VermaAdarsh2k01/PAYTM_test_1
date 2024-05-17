@@ -33,7 +33,7 @@ function Hero2() {
         t1.to(gsapRef.current , {
             rotate: 5,
             
-        })
+        }),
         t1.to(screenRef.current , {
             y:'-100vh',
             delay:1
@@ -41,20 +41,20 @@ function Hero2() {
     })
 
     return(
-        <>
+        <> 
             <div className='w-[100vw] h-[100vh] relative'>
-                <div className='w-full h-full  z-10 absolute top-0 left-0 bg-white' ref={screenRef}>
+                <div className='w-full h-full  z-10 absolute top-0 left-0 bg-white ' ref={screenRef}>
                     <div className='w-full h-full flex items-center justify-center gap-5'>
-                        <img ref={gsapRef} className="w-48" src={Card}/>
-                        <p className='text-8xl inter font-black tracking-tight' ref={sendRef}>SEND IT</p>
+                        <img ref={gsapRef} className="w-48 max-[600px]:w-24" src={Card}/>
+                        <p className='text-8xl inter font-black tracking-tight max-[600px]:text-4xl' ref={sendRef}>SEND IT</p>
                     </div>
                 </div>
-                <div className='w-full h-full flex items-center justify-center'>
-                    <div className='w-[30%] h-screen flex items-center justify-center max-[600px]:w-[100vw] max-[600px]:h-[30vh]'>
+                <div className='w-full h-full flex items-center justify-center '>
+                    <div className='w-[30%] h-screen flex items-center justify-center max-[600px]:w-[100vw] max-[600px]:h-[90vh]'>
                         <div className='w-[90%] h-[90%]  flex flex-col items-center justify-evenly inter border-x-2 border-black rounded-3xl ' >
-                            <p className='text-4xl text-black max-[1025px]:text-3xl max-[600px]:hidden'>Welcome to <span className='inter font-black  '>SEND IT</span></p>
-                            <p className='text-gray-500 text-justify text-sm px-10 max-[1025px]:px-10 max-[600px]:hidden'>Hello and welcome! 👋 We're thrilled to have you here. You've just stepped into a world of seamless, secure, and speedy money transfers with our newly developed app.</p>
-                            <div className='flex flex-col gap-10'>
+                            <p className='text-4xl text-black max-[1025px]:text-3xl '>Welcome to <span className='inter font-black  '>SEND IT</span></p>
+                            <p className='text-gray-500 text-justify text-sm px-10 max-[1025px]:px-10 '>Hello and welcome! 👋 We're thrilled to have you here. You've just stepped into a world of seamless, secure, and speedy money transfers with our newly developed app.</p>
+                            <div className='flex flex-col gap-5'>
                                 <div className='flex flex-col items-center justify-center'>
                                     <div className='w-40 flex items-center justify-center'>
                                         <Button 

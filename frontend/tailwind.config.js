@@ -15,7 +15,7 @@ export default {
       },
       ".scrollbar-webkit" : {
         "&::-webkit-scrollbar" : {
-          width: "8px"
+          width: "5px"
         },
         "&::-webkit-scrollbar-track" :{
           background: "white"

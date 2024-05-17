@@ -1,9 +1,8 @@
-// backend/db.js
+
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb+srv://vermaadarsh2510:adarsh2510@cluster0.zqh1ng5.mongodb.net/side")
 
-// Create a Schema for Users
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
@@ -13,7 +12,7 @@ const userSchema = new mongoose.Schema({
 
 const accountSchema = new mongoose.Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId, // Reference to User model
+        type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
         required: true
     },
