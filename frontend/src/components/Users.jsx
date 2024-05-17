@@ -10,7 +10,7 @@ export const Users = () => {
     const [filter , setFilter] = useState("");
 
     useEffect( ()=> {
-        axios.get("http://192.168.29.189:3000/api/v1/user/bulk?filter=" + filter)
+        axios.get("https://paytm-test-1-1.onrender.com/api/v1/user/bulk?filter=" + filter)
             .then( response => {
                 setUsers(response.data.user)
             }) 
