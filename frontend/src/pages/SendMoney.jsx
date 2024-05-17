@@ -108,7 +108,7 @@ export const SendMoney = () => {
 
     const handleTransfer = async () => {
         try {
-            await axios.post("http://192.168.29.189:3000/api/v1/account/transfer", {
+            await axios.post("https://paytm-test-1-1.onrender.com/api/v1/account/transfer", {
                 to: id,
                 amount
             }, {

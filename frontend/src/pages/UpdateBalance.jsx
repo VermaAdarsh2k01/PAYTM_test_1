@@ -35,7 +35,7 @@ const UpdateBalance = () => {
         console.log(typeof(balanceChange))
 
         try {
-            const response = await axios.put('http://192.168.29.189:3000/api/v1/account/update', { 
+            const response = await axios.put('https://paytm-test-1-1.onrender.com/api/v1/account/update', { 
                 userId ,
                 balanceChange: Number(balanceChange)
             },{
