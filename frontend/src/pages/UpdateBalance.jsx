@@ -69,8 +69,8 @@ const UpdateBalance = () => {
                                 <div className="">
                                     <form onSubmit={handleSubmit} className='flex flex-col gap-7'>
                                         <label className='text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex flex-col gap-3'>
-                                            Balance Change:
-                                            <input type="number" value={balanceChange} onChange={changeHandle} className='required flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm'/>
+                                            Balance to be added:
+                                            <input type="number" value={balanceChange} min="1" onChange={changeHandle} className='required flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm'/>
                                         </label>
                                         <button type="submit " className='justify-center rounded-md text-sm font-medium ring-offset-background transition-colors h-10 px-4 py-2 w-full bg-green-500'>Update Balance</button>
                                     </form>
