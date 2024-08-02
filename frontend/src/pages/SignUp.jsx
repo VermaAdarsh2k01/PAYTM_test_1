@@ -24,15 +24,15 @@ export const SignUp = () => {
                     <SubHeading label={"Enter your infromation to create an account"} />
                     <InputBox 
                         onChange= {(e) => setFirstName(e.target.value)} 
-                        placeholder="Adarsh" 
+                        placeholder="Raj" 
                         label={"First Name"} />
                     <InputBox 
                         onChange={(e) => setLastName(e.target.value)}
-                        placeholder="Verma" 
+                        placeholder="Nathani" 
                         label={"Last Name"} />
                     <InputBox 
                         onChange={(e) => setUsername(e.target.value)}
-                        placeholder="adarsh@gmail.com" 
+                        placeholder="raj@gmail.com" 
                         label={"Email"} />
                     <InputBox 
                         onChange={(e) => setPassword(e.target.value)}
